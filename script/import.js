@@ -8,7 +8,7 @@ $(function(){
 	})
 
 	/* set up XMLHttpRequest */
-	var url = "files/last.xls",
+	var url = "files/last.xls?date="+(new Date().getTime()),
 		oReq = new XMLHttpRequest();
 
 	oReq.open("GET", url, true);

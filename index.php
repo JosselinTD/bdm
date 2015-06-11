@@ -23,7 +23,7 @@
 	<script type="text/javascript" src="libs/xlsx.core.min.js"></script>
 
 	<script type="text/javascript" src="script/search.js"></script>
-	<script type="text/javascript" src="script/import.js"></script>
+	<script type="text/javascript" src="script/import.js?v=2"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/item.css">
 </head>
