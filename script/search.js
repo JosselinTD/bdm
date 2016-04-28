@@ -17,24 +17,27 @@ $(function(){
 				if(bd.hasOwnProperty(key) && typeof bd[key] === "string" && bd[key].toLowerCase().indexOf(search) != -1) {
 					div.append(
 						"<header>"+
-							"<span class='numero'>"+(bd["numero"] || "?")+"</span>"+
+							"<span class='numero'>"+(bd["numero"] || bd["NUMERO"] || "?")+"</span>"+
 							"<span class='desc'>"+
-								"<h1>"+(bd["titre"] || "?")+"</h1>"+
-								"<h2>"+(bd["serie"] || "?")+"</h2>"+
+								"<h1>"+(bd["titre"] || bd["TITRE"] || "?")+"</h1>"+
+								"<h2>"+(bd["serie"] || bd["SERIE"] || "?")+"</h2>"+
 							"</span>"+
 						"</header>"
 					);
 					div.append(
 						"<div class='detail'>"+
-							"<div class='auteur'>Auteur : "+(bd["auteur"] || "?")+"</div>"+
-							"<div class='auteur'>Année DL : "+(bd["anneedl"] || "?")+"</div>"+
-							"<div class='auteur'>Année EO : "+(bd["anneeeo"] || "?")+"</div>"+
-							"<div class='auteur'>Cote : "+(bd["cote"] || "?")+"</div>"+
-							"<div class='auteur'>Edition : "+(bd["edition"] || "?")+"</div>"+
+							"<div class='auteur'>Auteur : "+(bd["auteur"] || bd["AUTEUR"] || "?")+"</div>"+
+							"<div class='auteur'>Année DL : "+(bd["anneedl"] || bd["ANNEE DL"] || "?")+"</div>"+
+							"<div class='auteur'>Année EO : "+(bd["anneeeo"] || bd["ANNEE EO"] || "?")+"</div>"+
+							"<div class='auteur'>Cote : "+(bd["cote"] || bd["COTE"] || "?")+"</div>"+
+							"<div class='auteur'>Edition : "+(bd["edition"] || bd["EDITION"] || "?")+"</div>"+
 						"</div>"
 					);
 
-					if(bd["anneeeo"] && bd["anneeeo"].indexOf("eo") !== -1){
+					if(
+						(bd["anneeeo"] && bd["anneeeo"].indexOf("eo") !== -1) ||
+						(bd["ANNEE EO"] && bd["ANNEE EO"].indexOf("eo") !== -1)
+					){
 						div.addClass("eo");
 					}
 
